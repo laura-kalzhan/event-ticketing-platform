@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        generate_statistics: true
+
+jwt:
+  secret: test-only-secret-key-that-is-at-least-32-bytes-long
+
+logging:
+  level:
+    kz.kimep.ticketing: INFO

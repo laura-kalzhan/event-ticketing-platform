@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Build, Checkstyle and all tests (Testcontainers uses the runner's Docker)
+        run: ./mvnw -B clean verify
+
+      - name: Make sure integration tests really ran
+        run: |
+          skipped=$(grep -h -o 'skipped="[0-9]*"' target/surefire-reports/TEST-*.xml | grep -o '[0-9]*' | paste -sd+ - | bc)
+          echo "Skipped tests: $skipped"
+          test "$skipped" -eq 0
+
+      - name: Upload JaCoCo report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: target/surefire-reports/

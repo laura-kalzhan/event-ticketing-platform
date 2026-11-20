@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE import-control PUBLIC
+        "-//Checkstyle//DTD ImportControl Configuration 1.4//EN"
+        "https://checkstyle.org/dtds/import_control_1_4.dtd">
+<import-control pkg="kz.kimep.ticketing" strategyOnMismatch="allowed">
+    <subpackage name="catalog">
+        <disallow pkg="kz.kimep.ticketing.booking.domain"/>
+        <disallow pkg="kz.kimep.ticketing.booking.repo"/>
+        <disallow pkg="kz.kimep.ticketing.payment.domain"/>
+        <disallow pkg="kz.kimep.ticketing.payment.repo"/>
+        <disallow pkg="kz.kimep.ticketing.identity.domain"/>
+        <disallow pkg="kz.kimep.ticketing.identity.repo"/>
+        <disallow pkg="kz.kimep.ticketing.messaging.domain"/>
+        <disallow pkg="kz.kimep.ticketing.messaging.repo"/>
+    </subpackage>
+    <subpackage name="booking">
+        <disallow pkg="kz.kimep.ticketing.catalog.domain"/>
+        <disallow pkg="kz.kimep.ticketing.catalog.repo"/>
+        <disallow pkg="kz.kimep.ticketing.payment.domain"/>
+        <disallow pkg="kz.kimep.ticketing.payment.repo"/>
+        <disallow pkg="kz.kimep.ticketing.identity.domain"/>
+        <disallow pkg="kz.kimep.ticketing.identity.repo"/>
+        <disallow pkg="kz.kimep.ticketing.messaging.domain"/>
+        <disallow pkg="kz.kimep.ticketing.messaging.repo"/>
+    </subpackage>
+    <subpackage name="payment">
+        <disallow pkg="kz.kimep.ticketing.catalog.domain"/>
+        <disallow pkg="kz.kimep.ticketing.catalog.repo"/>
+        <disallow pkg="kz.kimep.ticketing.booking.domain"/>
+        <disallow pkg="kz.kimep.ticketing.booking.repo"/>
+        <disallow pkg="kz.kimep.ticketing.identity.domain"/>
+        <disallow pkg="kz.kimep.ticketing.identity.repo"/>
+        <disallow pkg="kz.kimep.ticketing.messaging.domain"/>
+        <disallow pkg="kz.kimep.ticketing.messaging.repo"/>
+    </subpackage>
+    <subpackage name="identity">
+        <disallow pkg="kz.kimep.ticketing.catalog.domain"/>
+        <disallow pkg="kz.kimep.ticketing.catalog.repo"/>
+        <disallow pkg="kz.kimep.ticketing.booking.domain"/>
+        <disallow pkg="kz.kimep.ticketing.booking.repo"/>
+        <disallow pkg="kz.kimep.ticketing.payment.domain"/>
+        <disallow pkg="kz.kimep.ticketing.payment.repo"/>
+        <disallow pkg="kz.kimep.ticketing.messaging.domain"/>
+        <disallow pkg="kz.kimep.ticketing.messaging.repo"/>
+    </subpackage>
+    <subpackage name="messaging">
+        <disallow pkg="kz.kimep.ticketing.catalog.domain"/>
+        <disallow pkg="kz.kimep.ticketing.catalog.repo"/>
+        <disallow pkg="kz.kimep.ticketing.booking.domain"/>
+        <disallow pkg="kz.kimep.ticketing.booking.repo"/>
+        <disallow pkg="kz.kimep.ticketing.payment.domain"/>
+        <disallow pkg="kz.kimep.ticketing.payment.repo"/>
+        <disallow pkg="kz.kimep.ticketing.identity.domain"/>
+        <disallow pkg="kz.kimep.ticketing.identity.repo"/>
+    </subpackage>
+</import-control>

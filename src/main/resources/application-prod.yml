@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        generate_statistics: false
+
+logging:
+  structured:
+    format:
+      console: ecs
+  level:
+    root: INFO

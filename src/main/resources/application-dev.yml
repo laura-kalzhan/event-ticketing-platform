@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    username: ${DB_USERNAME:ticketing}
+    password: ${DB_PASSWORD:secret}
+  rabbitmq:
+    username: ${RABBIT_USER:guest}
+    password: ${RABBIT_PASSWORD:guest}
+  jpa:
+    show-sql: true
+
+ticketing:
+  hold-ttl: 2m
+
+jwt:
+  secret: ${JWT_SECRET:dev-only-secret-key-that-is-at-least-32-bytes-long}
+
+logging:
+  level:
+    kz.kimep.ticketing: DEBUG
